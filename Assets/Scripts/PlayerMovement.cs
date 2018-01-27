@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	public float jumpForce;
 
 	private Rigidbody2D rb;
+	private bool hasDoubleJump;
 
 	void Start () 
 	{
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 		rb.velocity = new Vector2(moveHorizontal, rb.velocity.y);
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			rb.AddForce(Vector2.up * jumpForce);
+			rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 		}
 	}
 }
