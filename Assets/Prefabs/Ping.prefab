@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212492631180998082}
   - component: {fileID: 58979082547240382}
   - component: {fileID: 50611209147187340}
+  - component: {fileID: 114378090682013062}
   m_Layer: 0
   m_Name: Ping
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226893254477344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.084, y: 0.543, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,6 +78,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &114378090682013062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226893254477344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b47264c60e84014a9ae05d50eab5f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 5
+  oov:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &212492631180998082
 SpriteRenderer:
   m_ObjectHideFlags: 1
