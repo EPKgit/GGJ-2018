@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 	public float movementSpeed;
 	public float jumpForce;
     public float friction;
-
+    public GameObject childImageRenderer;
 	private Rigidbody2D rb;
     private CapsuleCollider2D collider2D;
     private bool isGrounded = true;
@@ -22,8 +22,18 @@ public class PlayerMovement : MonoBehaviour
 	{
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
-        if (!Mathf.Approximately(moveHorizontal, 0f))
+        if (!Mathf.Approximately(moveHorizontal, 0f)) {
             rb.velocity = new Vector2(moveHorizontal > 0 ? movementSpeed : -movementSpeed, rb.velocity.y);
+            if (rb.velocity.x > 0)
+            {
+                childImageRenderer.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                childImageRenderer.GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+            
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
 		{

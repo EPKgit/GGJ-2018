@@ -6,10 +6,10 @@ public class PingShotgun : MonoBehaviour {
     public int numCasts;
     public float arcInDeg;
     public float maxDistance;
-    public float cooldownTime;
-    public float markerLifetime;
+   // public float cooldownTime;
+    //public float markerLifetime;
     public GameObject marker;
-    public GameObject markerList;
+    //public GameObject markerList;
     public Camera cam;
 	// Use this for initialization
 	void Start () {
