@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 128c5cea65758c048a477a72e5d88527
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cave.unity
     guid: a23dc9db801a8e04b8c1041061f5fa06
+  - enabled: 1
+    path: Assets/Scenes/DanielTest.unity
+    guid: 0353e601bd1d5594aaa918da988fb584

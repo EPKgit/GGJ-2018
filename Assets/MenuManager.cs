@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour 
 {
 	public static MenuManager instance;
+	public GameObject SettingsMenu;
+	public GameObject MainMenu;
 
 	public string sceneName;
+	public float volume;
 
 	public void Awake()
 	{
@@ -29,6 +32,13 @@ public class MenuManager : MonoBehaviour
 
 	public void OpenSettingsMenu()
 	{
+		MainMenu.SetActive(false);
+		SettingsMenu.SetActive(true);
+	}
 
+	public void CloseSettingsMenu()
+	{
+		MainMenu.SetActive(true);
+		SettingsMenu.SetActive(false);
 	}
 }
