@@ -28,7 +28,7 @@ public class AudioTrigger : MonoBehaviour {
             audSou.Play();
             //audSou.outputAudioMixerGroup
             audSou.volume = 0;
-            audSou.loop = true;
+            audSou.loop = false;
             StartCoroutine("FadeIn");
             hasAlreadyActivated = true;
         }
