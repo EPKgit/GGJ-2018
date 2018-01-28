@@ -12,9 +12,12 @@ public class AudioTrigger : MonoBehaviour {
     //public GameObject audioThingList;
     private bool isActive, hasAlreadyActivated = false;
     private AudioSource audSou;
+    private float maxVol;
 
     void Start () {
-	}
+        maxVol = MenuManager.instance.volume;
+        maxVolume *= maxVol;
+    }
 
     public void OnTriggerEnter2D(Collider2D other)
     {

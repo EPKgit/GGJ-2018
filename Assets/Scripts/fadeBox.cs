@@ -10,9 +10,12 @@ public class fadeBox : MonoBehaviour {
     public string trackLayerName;
     private AudioSource audSou;
     private bool hasAlreadyActivated = false;
+    private float maxVol;
 
     void Start()
     {
+        maxVol = MenuManager.instance.volume;
+        newVolume *= maxVol;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
