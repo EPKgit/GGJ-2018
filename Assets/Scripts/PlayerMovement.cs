@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour 
 {
+    public static bool hasControl;
+
 	public float movementSpeed;
 	public float jumpForce;
     public float friction;
     public GameObject childImageRenderer;
+
 	private Rigidbody2D rb;
     private CapsuleCollider2D collider2D;
     private bool isGrounded = true;
@@ -16,10 +19,14 @@ public class PlayerMovement : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
         collider2D = GetComponent<CapsuleCollider2D>();
+        hasControl = true;
 	}
 
 	void Update () 
 	{
+        if(!hasControl)
+            return;
+
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
         if (!Mathf.Approximately(moveHorizontal, 0f)) {

@@ -6,6 +6,7 @@ public class PlayerDeath : MonoBehaviour
 {
 
 	public Checkpoint lastCheckpoint;
+	public GameObject deathScreen;
 
 	public bool testKill;
 
@@ -23,19 +24,21 @@ public class PlayerDeath : MonoBehaviour
 		if(lastCheckpoint == null)
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		else
-		{
 			DisplayDeathScreen();
-			Invoke("PlayerTeleport", 2f);
-		}
 	}
 
 	void DisplayDeathScreen()
 	{
-
+		deathScreen.SetActive(true);
+		//PlayerMovement.hasControl = false;
+		Time.timeScale = 0;
 	}
 
-	void PlayerTeleport()
+	public void Respawn()
 	{
+		deathScreen.SetActive(false);
+		//PlayerMovement.hasControl = true;
+		Time.timeScale = 1;
 		transform.position = lastCheckpoint.positionToReturnTo;
 	}
 
