@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
         
 		if (toFollow == null)
 			toFollow = GameObject.FindGameObjectWithTag("Player");
+		AudioListener.volume = MenuManager.instance.volume;
 		
 	}
 	
