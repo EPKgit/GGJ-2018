@@ -678,7 +678,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Title : TBD'
+  m_Text: Tread Lightly
 --- !u!222 &551129196
 CanvasRenderer:
   m_ObjectHideFlags: 0
