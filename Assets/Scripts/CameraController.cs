@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
 
 	void Start () 
 	{
+        
 		if (toFollow == null)
 			toFollow = GameObject.FindGameObjectWithTag("Player");
 		

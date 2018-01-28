@@ -40,10 +40,11 @@ public class PingShotgun : MonoBehaviour {
                 
             }*/
             Vector3 direction = new Vector3(clickPos.x - transform.position.x, clickPos.y - transform.position.y, transform.position.z).normalized;
-            Debug.Log("trying to raycast out from " + transform.position + " in the direction of " + direction);
+            //Debug.Log("trying to raycast out from " + transform.position + " in the direction of " + direction);
 
             Vector3 defaultDirection = rotate(-arcInDeg / 2, direction);
             float angleToRotate = (numCasts - 1) / arcInDeg;
+            Debug.Log(angleToRotate);
 
             for (int i = 0; i < numCasts; ++i)
             {
@@ -51,8 +52,8 @@ public class PingShotgun : MonoBehaviour {
                 RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, tempDirection, maxDistance);
                 if (hits.Length > 1)
                 {
-                    Instantiate(marker, hits[1].point, Quaternion.identity, markerList.transform);
-                    Debug.Log("Creating ping at " + hits[1].point);
+                    Instantiate(marker, hits[1].point, Quaternion.identity, hits[1].collider.gameObject.transform);
+                    //Debug.Log("Creating ping at " + hits[1].point);
                 }
             }
 

@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
 		{
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
 			rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isGrounded = false;
 		}
@@ -38,6 +39,34 @@ public class PlayerMovement : MonoBehaviour
             if(temp.collider != null)
                 isGrounded = true;
         }
+        if (isGrounded)
+        {
+            if (!Mathf.Approximately(rb.velocity.x, 0))
+            {
+                if (rb.velocity.x > 0)
+                {
+                    if ((rb.velocity + friction * new Vector2(-1f, 0f)).x > 0)
+                    {
+                        rb.velocity = rb.velocity + friction * new Vector2(-1f, 0f);
+                    }
+                    else
+                    {
+                        rb.velocity = new Vector2();
+                    }
+                }
+                else
+                {
+                    if ((rb.velocity + friction * new Vector2(1f, 0f)).x < 0)
+                    {
+                        rb.velocity = rb.velocity + friction * new Vector2(1f, 0f);
+                    }
+                    else
+                    {
+                        rb.velocity = new Vector2();
+                    }
+                }
+            }
+        }
 
-	}
+    }
 }
