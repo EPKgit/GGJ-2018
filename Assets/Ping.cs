@@ -9,15 +9,15 @@ public class Ping : MonoBehaviour
 
 	private float remainingTime;
 	private Rigidbody2D rb;
-	private CircleCollider2D collider2D;
+	//private CircleCollider2D collider2D;
 	
 	void Start () 
 	{
 		remainingTime = maxTime;
 		oov = 8;
 		rb = GetComponent<Rigidbody2D>();
-		collider2D = GetComponent<CircleCollider2D>();
-		PlayerPinger.instantiated.Add(collider2D);
+		//collider2D = GetComponent<CircleCollider2D>();
+		//PlayerPinger.instantiated.Add(collider2D);
 	}
 	
 	void Update () 
@@ -35,6 +35,6 @@ public class Ping : MonoBehaviour
 
 	void OnDestroy()
 	{
-		PlayerPinger.instantiated.Remove(collider2D);
+		//PlayerPinger.instantiated.Remove(collider2D);
 	}
 }
