@@ -49,10 +49,10 @@ public class PingShotgun : MonoBehaviour {
             for (int i = 0; i < numCasts; ++i)
             {
                 Vector3 tempDirection = rotate(i * angleToRotate, defaultDirection);
-                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, tempDirection, maxDistance);
-                if (hits.Length > 1)
+                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, tempDirection, maxDistance, LayerMask.GetMask("Terrain"));
+                if (hits.Length > 0)
                 {
-                    Instantiate(marker, hits[1].point, Quaternion.identity, hits[1].collider.gameObject.transform);
+                    Instantiate(marker, hits[0].point, Quaternion.identity, hits[0].collider.gameObject.transform);
                     //Debug.Log("Creating ping at " + hits[1].point);
                 }
             }
