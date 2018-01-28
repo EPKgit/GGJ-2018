@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour 
 {
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 	public float jumpForce;
     public float friction;
     public GameObject childImageRenderer;
+    public GameObject pauseScreen;
 
 	private Rigidbody2D rb;
     private CapsuleCollider2D collider2D;
@@ -27,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
         if(!hasControl)
             return;
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+            openPauseMenu();
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
         if (!Mathf.Approximately(moveHorizontal, 0f)) {
@@ -85,5 +89,27 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+    }
+
+    public void openPauseMenu()
+    {
+        pauseScreen.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void closePauseMenu()
+    {
+        Time.timeScale = 1;
+        pauseScreen.SetActive(false);
+    }
+
+    public void returnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    
+    public void quit()
+    {
+        Application.Quit();
     }
 }
