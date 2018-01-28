@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour {
 
-	void OnCollisionEnter2D(Collider2D col)
-	{
+	 void OnTriggerEnter2D(Collider2D collision)
+    {
 		SceneManager.LoadScene("EndGame");
 	}
 }

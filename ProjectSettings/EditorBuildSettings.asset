@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DanielTest.unity
     guid: 0353e601bd1d5594aaa918da988fb584
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 6a56da4909b562143862404c246e6187
